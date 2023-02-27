@@ -40,7 +40,7 @@ const formatWeatherCode = (index) => {
     image = "storm";
   } else {
     formattedValue = "Not Avalaible";
-    image = "sunny";
+    image = "loading";
   }
 
   const values = { text: formattedValue, image: image };

@@ -3,7 +3,7 @@ import axios from "axios";
 const searchCity = async (q) => {
   try {
     const response = await axios.get(
-      `https://geocoding-api.open-meteo.com/v1/search?name=${q}&count=3`
+      `https://geocoding-api.open-meteo.com/v1/search?name=${q}&count=5`
     );
     return response.data;
   } catch (error) {

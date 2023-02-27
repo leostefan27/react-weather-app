@@ -5,6 +5,26 @@
   margin: 0;
 }
 
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+/* scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
 body {
   font-family: 'Poppins',
     sans-serif;
@@ -78,16 +98,18 @@ main .searchCity input:focus {
 .dark-tint {
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 5rem 0;
 }
 
 .container {
-  height: 100vh;
-  width: 60%;
+  min-height: 100vh;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 5rem;
 }
 
 /* .forecast-info {
@@ -113,7 +135,7 @@ main .searchCity input:focus {
 }
 
 .today-forecast .city {
-  font-size: 3rem;
+  font-size: 2.5rem;
   align-items: center;
   text-align: center;
 }
@@ -130,10 +152,12 @@ main .searchCity input:focus {
 
 .today-forecast .other-info {
   display: flex;
+  margin-top: 1rem;
   gap: 0.5rem;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -150,6 +174,40 @@ main .searchCity input:focus {
   font-size: 2rem;
 }
 
-.today-forecast .next-days {
+.next-days {
   display: flex;
+  margin-top: 5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-days div {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.next-days div svg {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .today-forecast .city {
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .today-forecast .overall {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+  }
 }

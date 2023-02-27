@@ -7,6 +7,7 @@ import formatWeatherCode from "./utils/formatWeatherCode";
 import reverseGeocode from "./utils/reverseGeocoding";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faCloudRain, faWind } from "@fortawesome/free-solid-svg-icons";
+import NextDaysComponent from "./components/NextDaysComponent";
 
 function App() {
   const [weatherData, setWeatherData] = useState(undefined);
@@ -79,6 +80,10 @@ function App() {
     fetchWeatherData();
   }, [selectedRegion]);
 
+  useEffect(() => {
+    console.log(weatherData);
+  }, [weatherData]);
+
   return (
     <main
       style={{
@@ -145,6 +150,7 @@ function App() {
                 </div>
               </div>
             </div>
+            <NextDaysComponent data={weatherData} />
           </div>
         </div>
       )}
